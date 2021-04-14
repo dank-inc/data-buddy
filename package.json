@@ -1,6 +1,6 @@
 {
   "name": "@dank-inc/data-buddy",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Elijah Lucian",
   "license": "MIT",
   "description": "Need a little mock api data state buddy?",
@@ -11,7 +11,7 @@
   "files": [
     "lib"
   ],
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "tsc --noEmit",
     "compile": "rm -rf lib && tsc",
