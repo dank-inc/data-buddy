@@ -6,8 +6,6 @@ export type DataRecord = {
   id: ID;
 };
 
-export type DataBuddyParams<T extends DataRecord> = T[];
-
 export class DataBuddy<T extends DataRecord> {
   data: T[];
 
