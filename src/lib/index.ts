@@ -8,15 +8,7 @@ export type DataRecord = {
 
 export type DataBuddyParams<T extends DataRecord> = T[];
 
-export interface IDataBuddy<T extends DataRecord> {
-  get: () => T[];
-  getOne: (id: UUID) => T | null;
-  create: (body: Omit<T, "id">) => T;
-  update: (id: UUID, body: Partial<T>) => T | false;
-  delete: (id: UUID) => boolean;
-}
-
-export class DataBuddy<T extends DataRecord> implements IDataBuddy<T> {
+export class DataBuddy<T extends DataRecord> {
   data: T[];
 
   constructor(records: T[]) {
