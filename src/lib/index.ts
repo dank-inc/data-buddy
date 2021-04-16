@@ -1,9 +1,9 @@
 import { uuidGen } from "./utils";
 
-type UUID = string | number;
+export type ID = string | number;
 
 export type DataRecord = {
-  id: UUID;
+  id: ID;
 };
 
 export type DataBuddyParams<T extends DataRecord> = T[];
@@ -19,7 +19,7 @@ export class DataBuddy<T extends DataRecord> {
     return this.data;
   };
 
-  getOne = (id: UUID): T | null => {
+  getOne = (id: ID): T | null => {
     return this.data.find((record) => record.id === id) || null;
   };
 
@@ -33,7 +33,7 @@ export class DataBuddy<T extends DataRecord> {
     return record;
   };
 
-  update = (id: UUID, body: Partial<T>): T | false => {
+  update = (id: ID, body: Partial<T>): T | false => {
     const index = this.data.findIndex((record) => record.id === id);
     if (!index) return false;
 
@@ -42,7 +42,7 @@ export class DataBuddy<T extends DataRecord> {
     return this.data[index];
   };
 
-  delete = (id: UUID): boolean => {
+  delete = (id: ID): boolean => {
     const index = this.data.findIndex((record) => record.id === id);
     if (!index) return false;
     this.data.splice(index, 1);

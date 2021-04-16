@@ -1,16 +1,10 @@
-import { DataBuddy, DataRecord } from ".";
+import { DataBuddy, DataRecord, ID } from ".";
 
-type ID = string | number;
-
-type RecordBase = {
-  id: ID;
-};
-
-type User = RecordBase & {
+type User = DataRecord & {
   name: string;
 };
 
-type Transaction = RecordBase & {
+type Transaction = DataRecord & {
   userId: ID;
   amount: number;
 };
